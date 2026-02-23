@@ -34,12 +34,15 @@ There are two phases, and you stay in control of both.
 - **Iteration caps** for safe unattended/AFK runs
 - **GitHub integration** — work through labeled issues directly
 - **Monitor daemon** for completion and stall detection (zero tokens)
-- Works from any channel: Telegram, Discord, iMessage, CLI
+- Works with OpenClaw channels: WhatsApp, Telegram, Discord, iMessage, Signal, Slack (plus CLI workflows)
 
 ### Install
 
 ```bash
-git clone https://github.com/bkochavy/openclaw-build.git ~/.openclaw/workspace/skills/openclaw-build && bash ~/.openclaw/workspace/skills/openclaw-build/loops/install.sh
+curl -fsSL https://openclaw.ai/install.sh | bash
+mkdir -p ~/.openclaw/workspace/skills
+git clone https://github.com/bkochavy/openclaw-build.git ~/.openclaw/workspace/skills/openclaw-build
+bash ~/.openclaw/workspace/skills/openclaw-build/loops/install.sh
 ```
 
 Requires [OpenClaw](https://openclaw.ai), [`ralphy-cli`](https://www.npmjs.com/package/ralphy-cli) (`npm i -g ralphy-cli`), a coding engine (`codex` or `claude` CLI), and `tmux`.
@@ -73,7 +76,10 @@ Everything below is written for autonomous consumption. Read `prd/SKILL.md` and 
 ### Install
 
 ```bash
-git clone https://github.com/bkochavy/openclaw-build.git ~/.openclaw/workspace/skills/openclaw-build && bash ~/.openclaw/workspace/skills/openclaw-build/loops/install.sh
+curl -fsSL https://openclaw.ai/install.sh | bash
+mkdir -p ~/.openclaw/workspace/skills
+git clone https://github.com/bkochavy/openclaw-build.git ~/.openclaw/workspace/skills/openclaw-build
+bash ~/.openclaw/workspace/skills/openclaw-build/loops/install.sh
 ```
 
 ### PRD phase

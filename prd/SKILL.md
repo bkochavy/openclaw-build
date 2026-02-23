@@ -1,6 +1,6 @@
 ---
 name: prd-writer
-description: "Turn a rough idea into a detailed PRD through structured conversation. Use when: user has a product/feature idea and needs a spec, someone says 'spec this', 'write a PRD', 'plan this feature', 'build me X' (where X needs scoping first), 'prd', 'spec', '/spec'. Produces a PRD compatible with openclaw-coding-loops and ready for handoff."
+description: "Turn a rough idea into a detailed PRD through structured conversation. Use when: user has a product/feature idea and needs a spec, someone says 'spec this', 'write a PRD', 'plan this feature', 'build me X' (where X needs scoping first), 'prd', 'spec', '/spec'. Produces a PRD compatible with the openclaw-build loops workflow and ready for handoff."
 metadata: {"openclaw":{"emoji":"📋"}}
 ---
 
@@ -115,7 +115,7 @@ Include these sections ONLY when applicable (don't force them):
 
 Write the PRD to: `projects/[project-name]/PRD.md`
 
-The PRD must be compatible with openclaw-coding-loops task format. Each user story maps to a coding-loop task with acceptance criteria as the verification checklist.
+The PRD must be compatible with the openclaw-build loops task format. Each user story maps to a coding-loop task with acceptance criteria as the verification checklist.
 
 Present the PRD file path, then:
 
@@ -127,7 +127,7 @@ Present the PRD file path, then:
 
 ## Phase 4: HANDOFF
 
-**Goal:** Set up everything for an openclaw-coding-loops launch.
+**Goal:** Set up everything for an openclaw-build loops launch.
 
 After PRD approval:
 
@@ -135,16 +135,16 @@ After PRD approval:
 2. Present the launch command:
    ```
    Ready to build! Next step:
-   SKILL REQUIRED: Read skills/openclaw-coding-loops/SKILL.md
+   SKILL REQUIRED: Read skills/openclaw-build/loops/SKILL.md
    Then: ralphy --init in projects/[project-name]/
-   Then: launch openclaw-coding-loops with the PRD
+   Then: launch openclaw-build loops with the PRD
    ```
 3. Offer button:
    ```
    [Launch Build 🚀] [I'll do it manually ⏸️]
    ```
 
-If "Launch Build 🚀" — follow the openclaw-coding-loops skill to set up and launch the build. Run `ralphy --init`, inject standard rules, and start the tmux session with completion hooks.
+If "Launch Build 🚀" — follow the openclaw-build loops skill to set up and launch the build. Run `ralphy --init`, inject standard rules, and start the tmux session with completion hooks.
 
 ## Cross-Thread Execution
 

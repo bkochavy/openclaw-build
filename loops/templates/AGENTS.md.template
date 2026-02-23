@@ -1,0 +1,25 @@
+# Project Conventions
+
+## Stack
+- Framework: [e.g. Next.js 15, Express, FastAPI]
+- Language: [e.g. TypeScript, Python, Rust]
+- Key libraries: [e.g. Prisma, Zod, Bull]
+
+## Patterns
+- API style: [e.g. REST with /api prefix, GraphQL]
+- Database: [e.g. PostgreSQL via Prisma, SQLite via Drizzle]
+- Auth: [e.g. JWT with refresh tokens, session-based]
+- Error handling: [e.g. Result types, try/catch with custom errors]
+
+## Testing
+- Framework: [e.g. Vitest, Jest, pytest]
+- Run: [e.g. `npm test`, `pytest`]
+- Coverage: [e.g. all API endpoints must have integration tests]
+
+## Gotchas
+- [Add discovered gotchas here as you find them]
+
+---
+*This file is read automatically by Codex at session start.*
+*UPDATE this file when you discover new patterns or conventions.*
+*Verification commands and inter-task memory rules are managed by `.ralphy/config.yaml` — don't duplicate them here.*

@@ -1,0 +1,31 @@
+# [Feature Name] — PRD
+
+## Overview
+[What this feature/project does in 2-3 sentences]
+
+## Verification Commands
+Run these after EVERY task. A task is NOT done until all pass.
+- Typecheck: `[e.g. npx tsc --noEmit]`
+- Tests: `[e.g. npm test]`
+- Lint: `[e.g. npx eslint .]`
+- Build: `[e.g. npm run build]`
+
+> These should match `.ralphy/config.yaml` commands. Ralphy runs test/lint
+> automatically between tasks, but include them here so the agent runs them
+> within its own context too.
+
+## Tasks
+- [ ] [Task 1: description — independently verifiable]
+- [ ] [Task 2: description]
+- [ ] [Task 3: description]
+- [ ] [Task N: ...]
+
+<!-- If this project starts a dev server, add this as Task 1:
+- [ ] Kill any existing process on port XXXX: `lsof -ti:XXXX | xargs kill -9 2>/dev/null || true`
+-->
+
+## Notes
+- Each task = one commit with a descriptive message
+- Run verification commands before marking any task complete
+- If verification fails, fix the issue before moving on
+- Ralphy manages inter-task memory automatically via `.ralphy/progress.txt` and rules in `.ralphy/config.yaml` — no need to repeat memory instructions in the PRD

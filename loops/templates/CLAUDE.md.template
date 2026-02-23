@@ -1,0 +1,29 @@
+# Project Conventions
+
+## Stack
+- Framework: [e.g. Next.js 15, SwiftUI, Express]
+- Language: [e.g. TypeScript, Swift, Python]
+- Key libraries: [e.g. Tailwind, Zustand, Prisma]
+
+## Patterns
+- State management: [e.g. Zustand stores in /stores]
+- Routing: [e.g. App Router, file-based]
+- API style: [e.g. REST with /api prefix, tRPC]
+- Component structure: [e.g. /components/ui for primitives, /components/features for composed]
+
+## Testing
+- Framework: [e.g. Vitest, Jest, XCTest]
+- Run: [e.g. `npm test`, `swift test`]
+- Coverage: [e.g. all logic functions must have tests]
+
+## Gotchas
+- [Add discovered gotchas here as you find them]
+
+## Design Direction (if UI project)
+- [e.g. Dark mode, minimal, inspired by Linear/Raycast]
+- [Anti-patterns: NO generic AI look, NO default Tailwind colors]
+
+---
+*This file is read automatically by Claude Code at session start.*
+*UPDATE this file when you discover new patterns or conventions.*
+*Verification commands and inter-task memory rules are managed by `.ralphy/config.yaml` — don't duplicate them here.*

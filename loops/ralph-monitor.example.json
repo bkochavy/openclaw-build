@@ -1,0 +1,8 @@
+{
+  "tmux_socket": "~/.tmux/sock",
+  "telegram_bot_token_env": "TELEGRAM_BOT_TOKEN_AVA",
+  "telegram_chat_id": "",
+  "stall_threshold": 3,
+  "cleanup_threshold": 3,
+  "openclaw_bin": ""
+}

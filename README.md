@@ -1,4 +1,6 @@
 # openclaw-build
+![openclaw-build](https://raw.githubusercontent.com/bkochavy/openclaw-build/main/.github/social-preview.png)
+
 
 > From rough idea to shipped code, through a structured agent pipeline.
 

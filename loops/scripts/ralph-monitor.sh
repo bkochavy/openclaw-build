@@ -46,16 +46,16 @@ normalize_positive_int() {
 }
 
 resolve_openclaw_bin() {
+  if command -v openclaw >/dev/null 2>&1; then
+    command -v openclaw
+    return 0
+  fi
+
   local configured="${OPENCLAW_BIN:-$(config_value openclaw_bin)}"
   configured="$(expand_tilde "$configured")"
 
   if [ -n "$configured" ] && [ -x "$configured" ]; then
     printf "%s\n" "$configured"
-    return 0
-  fi
-
-  if command -v openclaw >/dev/null 2>&1; then
-    command -v openclaw
     return 0
   fi
 

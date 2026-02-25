@@ -13,11 +13,24 @@ AI coding agents stall three tasks in, silently drift off-spec, or die mid-sessi
 💡 Idea → 🎤 Interview → 📋 PRD.md → 🔄 Build Loop → ✅ Shipped
 ```
 
+## Disambiguation: openclaw-build vs openclaw-prd-writer
+
+| Repo | Scope | Use it when |
+|------|-------|-------------|
+| **`openclaw-build`** | **Full pipeline**: spec interview + PRD + build loop | You want end-to-end execution from idea to shipped tasks |
+| [`openclaw-prd-writer`](https://github.com/bkochavy/openclaw-prd-writer) | **Standalone spec phase** only | You only want the interview/PRD workflow without automated build runs |
+
+If you already have `openclaw-build`, you do not need `openclaw-prd-writer` separately.
+
 ---
 
 ## 👤 For Humans
 
-There are two phases, and you stay in control of both.
+### Why this exists
+
+Most agent runs fail the same way: context drifts, sessions die, and task state gets lost between retries. openclaw-build keeps the workflow grounded in a checked PRD, short restartable runs, and explicit approval gates so your agent can recover and continue instead of starting over.
+
+There are two phases, and you control both:
 
 **Phase 1 — Spec.** Tell your agent "spec this" or "build me X." It interviews you — restates your idea, asks clarifying questions as polls, proposes an architecture plan. Two approval gates: one before it writes the spec, one before it starts building. Nothing happens without your say-so.
 
@@ -36,16 +49,28 @@ There are two phases, and you stay in control of both.
 - **Monitor daemon** for completion and stall detection (zero tokens)
 - Works with OpenClaw channels: WhatsApp, Telegram, Discord, iMessage, Signal, Slack (plus CLI workflows)
 
-### Install
+### Install (one command)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/bkochavy/openclaw-build/main/install.sh | bash
+```
+
+OpenClaw must already be installed and onboarded first:
 
 ```bash
 curl -fsSL https://openclaw.ai/install.sh | bash
-mkdir -p ~/.openclaw/workspace/skills
-git clone https://github.com/bkochavy/openclaw-build.git ~/.openclaw/workspace/skills/openclaw-build
-bash ~/.openclaw/workspace/skills/openclaw-build/loops/install.sh
 ```
 
-Requires [OpenClaw](https://openclaw.ai), [`ralphy-cli`](https://www.npmjs.com/package/ralphy-cli) (`npm i -g ralphy-cli`), a coding engine (`codex` or `claude` CLI), and `tmux`.
+#### Requirements
+
+| Tool | Why | Install |
+|------|-----|---------|
+| `openclaw` | runtime + system events | `curl -fsSL https://openclaw.ai/install.sh \| bash` |
+| `ralphy` (`ralphy-cli`) | PRD-driven build loop runner | `npm i -g ralphy-cli` |
+| `codex` or `claude` | coding engine backend for runs | install either CLI and authenticate |
+| `tmux` | detached long-running sessions | `brew install tmux` or `apt install tmux` |
+| `node` 18+ | required runtime for toolchain and scripts | [nodejs.org](https://nodejs.org) |
+| `bash` | installer + monitor scripts | pre-installed on most systems |
 
 ### Quick start
 
@@ -76,10 +101,7 @@ Everything below is written for autonomous consumption. Read `prd/SKILL.md` and 
 ### Install
 
 ```bash
-curl -fsSL https://openclaw.ai/install.sh | bash
-mkdir -p ~/.openclaw/workspace/skills
-git clone https://github.com/bkochavy/openclaw-build.git ~/.openclaw/workspace/skills/openclaw-build
-bash ~/.openclaw/workspace/skills/openclaw-build/loops/install.sh
+curl -fsSL https://raw.githubusercontent.com/bkochavy/openclaw-build/main/install.sh | bash
 ```
 
 ### PRD phase
